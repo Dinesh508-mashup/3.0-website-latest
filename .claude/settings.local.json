@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node scripts/test-email.js)",
+      "Bash(node scripts/check-db.js)",
+      "Bash(node scripts/run-migration.js)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

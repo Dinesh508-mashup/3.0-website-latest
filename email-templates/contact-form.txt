@@ -1,0 +1,17 @@
+3.0 LABS · NEW PROJECT BRIEF
+============================
+
+{{from_name}} wants to build something.
+
+From         : {{from_name}} <{{from_email}}>
+Company      : {{company}}
+Role         : {{role}}
+Ideal start  : {{start}}
+
+PROJECT BRIEF
+-------------
+{{brief}}
+
+----
+Reply directly to: {{reply_to}}
+Sent via the 3.0 Labs contact form.
