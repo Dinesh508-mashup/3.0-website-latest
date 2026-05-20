@@ -37,7 +37,7 @@ const DEVELOPERS = [
   { name: 'Ashvith Adepu', role: 'AI & Automation Engineer', img: '/Images/Ashivth.jpg' },
   { name: 'Khan', role: 'AI & Automation Engineer', img: '/Images/Khan.jpeg' },
   { name: 'Mohammed Aqib', role: 'DevOps Engineer', img: '/Images/Aquib.jpg' },
-  { name: 'Shiva', role: 'AI Engineer', img: '/Images/siva.jpeg' },
+  { name: 'Siva', role: 'AI Engineer', img: '/Images/siva.jpeg' },
   { name: 'Suraj', role: 'Backend Developer', img: '/Images/suraj.jpg' },
   { name: 'Sumanth N', role: 'Full Stack Developer', img: '/Images/sumanthn.jpg' },
   { name: 'Sampath', role: 'Frontend Developer', img: '/Images/Sampath.jpg' },
