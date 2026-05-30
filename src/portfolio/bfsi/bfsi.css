@@ -1,0 +1,216 @@
+/* ============================================================
+   BFSI Skill Portal Case Study — page-specific styles
+   Additive-only: extends pages.css patterns, never overrides.
+   ============================================================ */
+
+/* Cover */
+.bfsi-cover-section { padding-top: 0; }
+
+.bfsi-cover-frame {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+.bfsi-cover-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+/* Tag bar below cover */
+.bfsi-tag-bar { margin-top: 18px; margin-bottom: 0; }
+
+/* Challenge grid — 4 equal columns */
+.bfsi-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 980px) {
+  .bfsi-challenge-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .bfsi-challenge-grid { grid-template-columns: 1fr; }
+}
+
+.bfsi-challenge-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background: #fff;
+  padding: 26px 22px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.bfsi-challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -24px rgba(186,47,88,0.22), 0 0 0 1px rgba(248,142,75,0.3);
+}
+.bch-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.bch-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+.bch-text {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+.bch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(248,142,75,0.55);
+  margin-top: auto;
+}
+
+/* Platform modules — 3 col, 2 rows for 6 cards */
+.bfsi-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 980px) {
+  .bfsi-modules-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .bfsi-modules-grid { grid-template-columns: 1fr; }
+}
+/* Restore min-height for the module cards used in this grid */
+.bfsi-modules-grid .portfolio-process-card {
+  min-height: 280px;
+}
+
+/* Screens — 2 equal columns */
+.bfsi-screens-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 768px) {
+  .bfsi-screens-row { grid-template-columns: 1fr; }
+}
+
+/* Mobile padding tightening */
+@media (max-width: 640px) {
+  .bfsi-challenge-card { padding: 22px 18px; min-height: 180px; }
+}
+
+/* Platform snapshots — 3-column grid with captions */
+.bfsi-snapshots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.bfsi-snapshot-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.bfsi-snapshot-img-wrap {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: #f5f5f5;
+  line-height: 0;
+}
+.bfsi-snapshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.bfsi-snapshot-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+.bfsi-snapshot-caption {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .bfsi-snapshots-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Launch moment — stacked card */
+.bfsi-launch-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(60% 80% at 90% 0%, rgba(248,142,75,0.24), transparent 70%),
+    radial-gradient(50% 70% at 0% 100%, rgba(186,47,88,0.18), transparent 68%),
+    var(--ink);
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bfsi-launch-text {
+  padding: 44px 44px 32px;
+}
+.bfsi-launch-text .eyebrow { color: rgba(255,255,255,0.7); }
+.bfsi-launch-text h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(32px, 4.5vw, 64px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin: 18px 0 0;
+}
+.bfsi-launch-text .ital-gradient {
+  font-style: italic;
+  font-family: "Instrument Serif", "Space Grotesk", serif;
+  font-weight: 400;
+  background: linear-gradient(100deg, #FFD6B8 0%, #F88E4B 45%, #F6B0C7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bfsi-launch-photo {
+  width: 100%;
+  line-height: 0;
+}
+.bfsi-launch-photo img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+@media (max-width: 768px) {
+  .bfsi-launch-text { padding: 32px 28px 24px; }
+  .bfsi-launch-photo img { height: 320px; }
+}
+@media (max-width: 480px) {
+  .bfsi-launch-text { padding: 24px 22px 20px; }
+  .bfsi-launch-photo img { height: 220px; }
+}

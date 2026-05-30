@@ -1,0 +1,537 @@
+/* ============================================================
+   RevisionPrep Case Study — page-specific styles
+   Additive-only: extends pages.css patterns, never overrides.
+   ============================================================ */
+
+/* ── Hero alignment fix ──────────────────────────────────── */
+/* Long title — scale down so it fits the left column cleanly. */
+.rp-hero-wrap .page-hero-grid {
+  align-items: start;
+}
+.rp-hero-wrap .page-h1 {
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+/* ── Cover ───────────────────────────────────────────────── */
+.rp-cover-section { padding-top: 0; }
+
+.rp-cover-frame {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: var(--paper);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+.rp-cover-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 680px;
+  object-fit: cover;
+}
+
+.rp-tag-bar { margin-top: 18px; margin-bottom: 0; }
+
+/* ── Brief / Goal cards ───────────────────────────────────── */
+.rp-brief-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 980px) { .rp-brief-body { grid-template-columns: 1fr; gap: 32px; } }
+
+.rp-brief-text {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.rp-brief-text p { margin: 0 0 16px; }
+.rp-brief-text p:last-child { margin-bottom: 0; }
+
+.rp-goals-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.rp-goals-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rp-goal-card {
+  border: var(--bd);
+  border-radius: 18px;
+  background: #fff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.rp-goal-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 12px 32px -16px rgba(186,47,88,0.18), 0 0 0 1px rgba(248,142,75,0.22);
+}
+.rp-goal-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--berry));
+  box-shadow: 0 0 8px rgba(248,142,75,0.5);
+  flex-shrink: 0;
+}
+.rp-goal-text {
+  font-size: 14px; font-weight: 500;
+  letter-spacing: -0.01em; line-height: 1.3;
+}
+
+/* ── Challenge cards ──────────────────────────────────────── */
+.rp-challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 768px) { .rp-challenge-grid { grid-template-columns: 1fr; } }
+
+.rp-challenge-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background: #fff;
+  padding: 32px 28px;
+  min-height: 220px;
+  display: flex; flex-direction: column; gap: 12px;
+  position: relative; overflow: hidden;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.rp-challenge-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--berry));
+}
+.rp-challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -24px rgba(186,47,88,0.22), 0 0 0 1px rgba(248,142,75,0.3);
+}
+.rp-ch-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.rp-ch-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500; font-size: 22px;
+  letter-spacing: -0.025em; line-height: 1.1; margin: 0;
+}
+.rp-ch-text {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0;
+}
+
+/* ── Solution cards ───────────────────────────────────────── */
+.rp-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 768px) { .rp-solution-grid { grid-template-columns: 1fr; } }
+
+.rp-solution-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background: #fff;
+  padding: 32px 28px;
+  min-height: 220px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.rp-solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -24px rgba(186,47,88,0.22), 0 0 0 1px rgba(248,142,75,0.3);
+}
+.rp-sol-icon {
+  width: 42px; height: 42px; border-radius: 14px;
+  background: linear-gradient(135deg, #F88E4B 0%, #BA2F58 100%);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+.rp-sol-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.rp-sol-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500; font-size: 22px;
+  letter-spacing: -0.025em; line-height: 1.1; margin: 0;
+}
+.rp-sol-text {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0;
+}
+
+/* ============================================================
+   ARCHITECTURE SECTION (dark ink background)
+   ============================================================ */
+.rp-arch-section {
+  background: var(--ink);
+  border-top: 1.5px solid #222;
+  border-bottom: 1.5px solid #222;
+}
+.rp-arch-section .sec-head { border: none; }
+.rp-arch-section .sec-head h2 { color: #fff; }
+.rp-arch-section .sec-head .right { color: rgba(255,255,255,0.6); }
+.rp-arch-section .eyebrow { color: rgba(248,142,75,0.85); }
+
+/* Config clusters */
+.rp-arch-config {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+@media (max-width: 980px) { .rp-arch-config { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .rp-arch-config { grid-template-columns: 1fr 1fr; gap: 8px; } }
+
+.rp-config-cluster {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 18px 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.rp-config-cluster:hover {
+  background: rgba(248,142,75,0.07);
+  border-color: rgba(248,142,75,0.20);
+}
+.rp-config-cluster-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.rp-config-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.rp-config-pill {
+  font-size: 12px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: rgba(255,255,255,0.80);
+  transition: background 0.2s, border-color 0.2s;
+}
+.rp-config-cluster:hover .rp-config-pill {
+  background: rgba(248,142,75,0.10);
+  border-color: rgba(248,142,75,0.22);
+}
+
+/* Flow layout */
+.rp-arch-flow {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 980px) { .rp-arch-flow { grid-template-columns: 1fr; } }
+
+/* Pipeline column */
+.rp-pipeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 56px;
+}
+
+/* Vertical connecting line */
+.rp-pipeline::before {
+  content: "";
+  position: absolute;
+  left: 19px; top: 20px; bottom: 20px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(248,142,75,0) 0%,
+    rgba(248,142,75,0.35) 8%,
+    rgba(248,142,75,0.35) 92%,
+    rgba(248,142,75,0) 100%
+  );
+  pointer-events: none;
+}
+
+.rp-pipeline-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.rp-pipeline-step-num {
+  position: absolute;
+  left: -56px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(248,142,75,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  z-index: 2;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.rp-pipeline-step:hover .rp-pipeline-step-num {
+  background: rgba(248,142,75,0.15);
+  border-color: rgba(248,142,75,0.5);
+  color: rgba(248,142,75,0.9);
+}
+
+.rp-pipeline-step-body {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 60px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.rp-pipeline-step:hover .rp-pipeline-step-body {
+  background: rgba(248,142,75,0.07);
+  border-color: rgba(248,142,75,0.18);
+}
+.rp-pipeline-step-body.accent {
+  background: linear-gradient(135deg, rgba(248,142,75,0.10) 0%, rgba(186,47,88,0.10) 100%);
+  border-color: rgba(248,142,75,0.22);
+}
+.rp-pipeline-step-body.accent:hover,
+.rp-pipeline-step:hover .rp-pipeline-step-body.accent {
+  background: linear-gradient(135deg, rgba(248,142,75,0.16) 0%, rgba(186,47,88,0.16) 100%);
+  border-color: rgba(248,142,75,0.35);
+}
+
+.rp-pipeline-step-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500; font-size: 15px;
+  letter-spacing: -0.015em;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.2;
+}
+.rp-pipeline-step-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.42);
+  margin-top: 3px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.rp-pipeline-step-badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(248,142,75,0.12);
+  border: 1px solid rgba(248,142,75,0.22);
+  color: rgba(248,142,75,0.85);
+  white-space: nowrap; flex-shrink: 0;
+}
+.rp-pipeline-step-badge.feedback {
+  background: rgba(186,47,88,0.14);
+  border-color: rgba(186,47,88,0.30);
+  color: rgba(246,176,199,0.9);
+}
+
+/* Connector arrow between steps */
+.rp-pipeline-connector {
+  height: 22px;
+  display: flex; align-items: center;
+  padding-left: 0;
+}
+.rp-pipeline-connector::before {
+  content: "↓";
+  font-size: 13px;
+  color: rgba(248,142,75,0.28);
+  line-height: 1;
+  margin-left: 8px;
+}
+
+/* Right annotations column */
+.rp-arch-annotations {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-top: 4px;
+}
+
+.rp-arch-ann {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 14px 16px;
+  transition: background 0.3s;
+}
+.rp-arch-ann:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.11);
+}
+.rp-arch-ann-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(248,142,75,0.65);
+  margin-bottom: 8px;
+}
+.rp-arch-ann-items {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+.rp-arch-ann-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+
+.rp-feedback-ann {
+  background: rgba(186,47,88,0.10);
+  border: 1px solid rgba(186,47,88,0.25);
+  border-radius: 16px;
+  padding: 14px 16px;
+  transition: background 0.3s;
+}
+.rp-feedback-ann:hover { background: rgba(186,47,88,0.14); }
+.rp-feedback-ann-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(246,176,199,0.8);
+  margin-bottom: 6px;
+}
+.rp-feedback-ann-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+/* ── Interface Deep-Dive ──────────────────────────────────── */
+.rp-interface-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+@media (max-width: 768px) { .rp-interface-grid { grid-template-columns: 1fr; } }
+
+.rp-interface-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background: #fff;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.rp-interface-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 56px -26px rgba(186,47,88,0.24), 0 0 0 1px rgba(248,142,75,0.30);
+}
+.rp-interface-card .frame {
+  border-bottom: var(--bd);
+  overflow: hidden;
+  position: relative;
+}
+.rp-interface-card .frame img { transition: transform 0.8s cubic-bezier(.2,.7,.2,1); }
+.rp-interface-card:hover .frame img { transform: scale(1.035); }
+.rp-interface-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.rp-interface-card-body {
+  padding: 22px 24px 26px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.rp-interface-card-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.rp-interface-card-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500; font-size: 20px;
+  letter-spacing: -0.02em; margin: 0;
+}
+.rp-interface-card-desc {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0;
+}
+
+/* ── Testimonials ─────────────────────────────────────────── */
+.rp-testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 768px) { .rp-testimonials-grid { grid-template-columns: 1fr; } }
+
+.rp-testimonial-card {
+  border: var(--bd);
+  border-radius: var(--r-card);
+  background: #fff;
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 24px;
+  transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+}
+.rp-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -24px rgba(186,47,88,0.22), 0 0 0 1px rgba(248,142,75,0.3);
+}
+.rp-testimonial-quote {
+  font-size: 15px; color: var(--ink); line-height: 1.70;
+  position: relative; padding-left: 20px;
+  flex: 1;
+}
+.rp-testimonial-quote::before {
+  content: "";
+  position: absolute; left: 0; top: 4px; bottom: 4px;
+  width: 2px; border-radius: 999px;
+  background: linear-gradient(180deg, var(--orange) 0%, var(--berry) 100%);
+}
+.rp-testimonial-footer {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17,17,17,0.10);
+}
+.rp-testimonial-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--berry));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600; font-size: 14px; color: #fff;
+}
+.rp-testimonial-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500; font-size: 15px; letter-spacing: -0.01em;
+  margin: 0;
+}
+.rp-testimonial-role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); margin-top: 2px;
+}
+
+/* ── Mobile tightening ────────────────────────────────────── */
+@media (max-width: 640px) {
+  .rp-challenge-card,
+  .rp-solution-card { padding: 24px 20px; min-height: 180px; }
+  .rp-interface-card-body { padding: 18px 20px 22px; }
+  .rp-testimonial-card { padding: 24px 20px; }
+  .rp-arch-config { grid-template-columns: 1fr 1fr; }
+  .rp-pipeline { padding-left: 44px; }
+  .rp-pipeline-step-num { left: -44px; width: 32px; height: 32px; font-size: 9px; }
+  .rp-pipeline::before { left: 15px; }
+}
